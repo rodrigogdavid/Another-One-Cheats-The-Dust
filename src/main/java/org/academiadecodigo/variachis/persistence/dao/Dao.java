@@ -1,9 +1,11 @@
 package org.academiadecodigo.variachis.persistence.dao;
 
+import java.util.List;
+
 public interface Dao<T>{
 
 
-    T findAll();
+    List<T> findAll();
 
     T findById(Integer id);
 
