@@ -3,13 +3,14 @@ package org.academiadecodigo.variachis.persistence.model;
 
 import org.academiadecodigo.variachis.persistence.model.Client;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "habit")
 public class Habit {
+
+    @Id
+    private Integer id;
 
     private boolean smoking;
     private boolean drinking;
@@ -24,7 +25,6 @@ public class Habit {
 
     @OneToOne
     private Client client;
-
 
     public boolean isSmoking() {
         return smoking;
