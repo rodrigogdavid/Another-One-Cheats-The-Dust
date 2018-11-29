@@ -1,0 +1,13 @@
+/Users/codecadet/Desktop/Another-One-Cheats-The-Dust/src/main/java/org/academiadecodigo/variachis/persistence/dao/jpa/GenericDao.java
+/Users/codecadet/Desktop/Another-One-Cheats-The-Dust/src/main/java/org/academiadecodigo/variachis/command/ClientDto.java
+/Users/codecadet/Desktop/Another-One-Cheats-The-Dust/src/main/java/org/academiadecodigo/variachis/converters/ClientToDTO.java
+/Users/codecadet/Desktop/Another-One-Cheats-The-Dust/src/main/java/org/academiadecodigo/variachis/persistence/dao/jpa/ClientDao.java
+/Users/codecadet/Desktop/Another-One-Cheats-The-Dust/src/main/java/org/academiadecodigo/variachis/persistence/dao/Dao.java
+/Users/codecadet/Desktop/Another-One-Cheats-The-Dust/src/main/java/org/academiadecodigo/variachis/converters/DTOtoClient.java
+/Users/codecadet/Desktop/Another-One-Cheats-The-Dust/src/main/java/org/academiadecodigo/variachis/services/HabitService.java
+/Users/codecadet/Desktop/Another-One-Cheats-The-Dust/src/main/java/org/academiadecodigo/variachis/controller/ControllerTest.java
+/Users/codecadet/Desktop/Another-One-Cheats-The-Dust/src/main/java/org/academiadecodigo/variachis/persistence/dao/jpa/HabitDao.java
+/Users/codecadet/Desktop/Another-One-Cheats-The-Dust/src/main/java/org/academiadecodigo/variachis/services/ClientService.java
+/Users/codecadet/Desktop/Another-One-Cheats-The-Dust/src/main/java/org/academiadecodigo/variachis/controller/ServiceTest.java
+/Users/codecadet/Desktop/Another-One-Cheats-The-Dust/src/main/java/org/academiadecodigo/variachis/persistence/model/Habit.java
+/Users/codecadet/Desktop/Another-One-Cheats-The-Dust/src/main/java/org/academiadecodigo/variachis/persistence/model/Client.java

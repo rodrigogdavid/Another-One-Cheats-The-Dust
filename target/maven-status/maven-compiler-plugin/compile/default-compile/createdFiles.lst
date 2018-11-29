@@ -1,0 +1,13 @@
+org/academiadecodigo/variachis/persistence/model/Client.class
+org/academiadecodigo/variachis/services/HabitService.class
+org/academiadecodigo/variachis/converters/ClientToDTO.class
+org/academiadecodigo/variachis/persistence/dao/Dao.class
+org/academiadecodigo/variachis/services/ClientService.class
+org/academiadecodigo/variachis/controller/ControllerTest.class
+org/academiadecodigo/variachis/controller/ServiceTest.class
+org/academiadecodigo/variachis/persistence/dao/jpa/GenericDao.class
+org/academiadecodigo/variachis/persistence/model/Habit.class
+org/academiadecodigo/variachis/persistence/dao/jpa/ClientDao.class
+org/academiadecodigo/variachis/converters/DTOtoClient.class
+org/academiadecodigo/variachis/command/ClientDto.class
+org/academiadecodigo/variachis/persistence/dao/jpa/HabitDao.class

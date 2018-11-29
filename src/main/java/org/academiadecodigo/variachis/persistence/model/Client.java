@@ -88,7 +88,7 @@ public class Client {
         return weight;
     }
 
-    public Integer getHearthBeats() {
+    public Integer getHeartBeats() {
         return heartBeats;
     }
 
