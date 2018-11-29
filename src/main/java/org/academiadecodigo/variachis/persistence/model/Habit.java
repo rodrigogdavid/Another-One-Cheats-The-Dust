@@ -1,5 +1,7 @@
-package org.academiadecodigo.variachis.persistence;
+package org.academiadecodigo.variachis.persistence.model;
 
+
+import org.academiadecodigo.variachis.persistence.model.Client;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;

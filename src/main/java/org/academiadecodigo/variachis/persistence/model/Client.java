@@ -1,4 +1,4 @@
-package org.academiadecodigo.variachis.persistence;
+package org.academiadecodigo.variachis.persistence.model;
 
 import javax.persistence.*;
 
