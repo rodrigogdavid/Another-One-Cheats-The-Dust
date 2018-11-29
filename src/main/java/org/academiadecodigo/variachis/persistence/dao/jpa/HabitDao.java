@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 public class HabitDao extends GenericDao<Habit> {
 
 
-    public HabitDao(){
+    public HabitDao() {
         super(Habit.class);
     }
 }

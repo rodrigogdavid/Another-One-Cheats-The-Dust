@@ -14,7 +14,7 @@ public class Client {
     private Integer age;
     private Integer height;
     private Integer weight;
-    private Integer hearthBeats;
+    private Integer heartBeats;
     private Integer score;
 
     @OneToOne(
@@ -52,7 +52,7 @@ public class Client {
     }
 
     public void setHearthBeats(Integer hearthBeats) {
-        this.hearthBeats = hearthBeats;
+        this.heartBeats = hearthBeats;
     }
 
     public void setScore(Integer score) {
@@ -89,7 +89,7 @@ public class Client {
     }
 
     public Integer getHearthBeats() {
-        return hearthBeats;
+        return heartBeats;
     }
 
     public Integer getScore() {
@@ -111,7 +111,7 @@ public class Client {
                 ", age=" + age +
                 ", height=" + height +
                 ", weight=" + weight +
-                ", hearthBeats=" + hearthBeats +
+                ", hearthBeats=" + heartBeats +
                 ", score=" + score +
                 ", habit=" + habit +
                 '}';

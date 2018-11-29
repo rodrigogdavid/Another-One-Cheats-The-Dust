@@ -1,6 +1,9 @@
 package org.academiadecodigo.variachis.persistence.dao.jpa;
 
 import org.academiadecodigo.variachis.persistence.dao.Dao;
+import org.academiadecodigo.variachis.persistence.model.Client;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 
 import javax.persistence.EntityManager;
@@ -20,6 +23,7 @@ public abstract class GenericDao <T> implements Dao<T> {
     public GenericDao(Class<T> modelType){
         this.modelType = modelType;
     }
+
 
     public void setEm(EntityManager em){
         this.em = em;

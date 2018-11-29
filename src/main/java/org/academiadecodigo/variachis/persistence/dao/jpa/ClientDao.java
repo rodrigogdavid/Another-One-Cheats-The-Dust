@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 public class ClientDao extends GenericDao<Client> {
 
 
-    public ClientDao(){
+    public ClientDao() {
         super(Client.class);
     }
 }
