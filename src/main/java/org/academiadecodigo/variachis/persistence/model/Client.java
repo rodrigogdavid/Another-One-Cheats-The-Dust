@@ -100,6 +100,8 @@ public class Client {
         return habit;
     }
 
+
+
     @Override
     public String toString() {
         return "Client{" +

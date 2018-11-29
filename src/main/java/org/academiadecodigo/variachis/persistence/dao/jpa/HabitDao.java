@@ -1,8 +1,11 @@
 package org.academiadecodigo.variachis.persistence.dao.jpa;
 
 import org.academiadecodigo.variachis.persistence.model.Habit;
+import org.springframework.stereotype.Repository;
 
-public class HabitDao extends GenericDao {
+
+@Repository
+public class HabitDao extends GenericDao<Habit> {
 
 
     public HabitDao(){
