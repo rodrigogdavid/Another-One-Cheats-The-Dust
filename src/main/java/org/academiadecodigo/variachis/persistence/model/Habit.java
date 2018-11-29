@@ -106,4 +106,19 @@ public class Habit {
         this.parent = parent;
     }
 
+    @Override
+    public String toString() {
+        return "Habit{" +
+                "smoking=" + smoking +
+                ", drinking=" + drinking +
+                ", takeDrugs=" + takeDrugs +
+                ", riskyJob=" + riskyJob +
+                ", sports=" + sports +
+                ", bootcampCodeCadet=" + bootcampCodeCadet +
+                ", numberOfMeals=" + numberOfMeals +
+                ", relationship=" + relationship +
+                ", parent=" + parent +
+                ", client=" + client +
+                '}';
+    }
 }
