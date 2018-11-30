@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class ClientService {
 
@@ -78,6 +80,21 @@ public class ClientService {
         return score;
 
 
+    }
+
+    public Client findByName(String firstName, String lastName){
+
+        List<Client> clients = clientDao.findAll();
+
+        Client clientLogin = null;
+
+        for(Client client : clients){
+            if (client.getFirstName().equals(firstName) && client.getLastName().equals(lastName)) {
+
+                clientLogin = client;
+            }
+        }
+        return clientLogin;
     }
 
 

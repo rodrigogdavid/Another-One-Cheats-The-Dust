@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    <title>Login Form</title>
+
+    <style>
+        div {
+            align-content: center;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <h1>Login Form</h1>
+
+    <form th:object="${client}" th:action="@{'/client/loginDone'}" method="post">
+        <label>First Name:</label>
+        <input type="text" th:field="*{firstName}"/><span style="color:red" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">
+    First Name field error messages
+    </span>
+        <br>
+        <label>Last Name:</label>
+        <input type="text" th:field="*{lastName}"/><span style="color:red"th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">
+    First Name field error messages
+    </span>
+
+
+
+    <button class="btn btn-default" type="submit" name="action" value="Submit">Submit</button>
+
+    </form>
+</div>
+</body>
+
+</html>
+

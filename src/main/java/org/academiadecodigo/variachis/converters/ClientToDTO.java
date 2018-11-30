@@ -37,6 +37,7 @@ public class ClientToDTO {
         ClientDto clientDto = new ClientDto();
         //Habit habit = clientService.getHabit(client.getId());
 
+        clientDto.setId(client.getId());
         clientDto.setAge(client.getAge());
         clientDto.setFirstName(client.getFirstName());
         clientDto.setLastName(client.getLastName());

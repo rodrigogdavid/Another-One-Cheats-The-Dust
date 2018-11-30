@@ -1,11 +1,28 @@
 package org.academiadecodigo.variachis.command;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
 public class ClientDto {
 
     private Integer id;
+
+    @NotNull(message = "First name is mandatory")
+    @NotBlank(message = "First name is mandatory")
+    @Size(min = 3, max = 64)
     private String firstName;
+
+    @NotNull(message = "Last name is mandatory")
+    @NotBlank(message = "Last name is mandatory")
+    @Size(min = 3, max = 64)
     private String lastName;
+
+
     private Integer age;
+
+
     private Integer height;
     private Integer weight;
     private Integer heartBeats;

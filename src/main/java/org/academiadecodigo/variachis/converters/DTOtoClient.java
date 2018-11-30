@@ -33,7 +33,9 @@ public class DTOtoClient {
 
     public Client convert(ClientDto clientDto) {
 
-        Client client = (clientDto.getId() != null ? clientService.get(clientDto.getId()) : new Client());
+        //Client client = (clientDto.getId() != null ? clientService.get(clientDto.getId()) : new Client());
+
+        Client client = clientService.findByName(clientDto.getFirstName(), clientDto.getLastName());
 
         Habit habit = clientDto.getId() != null ? habitService.get(clientDto.getId()) : new Habit();
 
