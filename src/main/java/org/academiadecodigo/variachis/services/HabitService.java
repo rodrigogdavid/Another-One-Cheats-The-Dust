@@ -26,12 +26,13 @@ public class HabitService {
         this.clientDao = clientDao;
     }
 
+    @Transactional
     public Habit get(Integer id){
         return habitDao.findById(id);
     }
 
     @Transactional
-    public Habit save (Habit habit){
+    public Habit save(Habit habit){
 
         return habitDao.saveOrUpdate(habit);
     }

@@ -25,7 +25,7 @@ public class ScoreService {
 
 
     @Transactional
-    public void totalScore(Integer id){
+    public Integer totalScore(Integer id){
         Integer total = 0;
 
         Client client = clientService.get(id);
@@ -35,6 +35,8 @@ public class ScoreService {
         client.setScore(total);
 
         clientService.save(client);
+
+        return total;
 
     }
 }

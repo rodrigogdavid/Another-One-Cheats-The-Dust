@@ -27,7 +27,7 @@ public class Habit {
     }
 
     public void setId(Integer id) {
-        this.id = client.getId();
+        this.id = id;
     }
 
     @OneToOne

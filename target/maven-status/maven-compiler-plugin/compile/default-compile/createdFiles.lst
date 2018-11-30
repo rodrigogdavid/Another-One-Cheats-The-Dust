@@ -9,5 +9,6 @@ org/academiadecodigo/variachis/persistence/dao/jpa/GenericDao.class
 org/academiadecodigo/variachis/persistence/model/Habit.class
 org/academiadecodigo/variachis/persistence/dao/jpa/ClientDao.class
 org/academiadecodigo/variachis/converters/DTOtoClient.class
+org/academiadecodigo/variachis/services/ScoreService.class
 org/academiadecodigo/variachis/command/ClientDto.class
 org/academiadecodigo/variachis/persistence/dao/jpa/HabitDao.class
