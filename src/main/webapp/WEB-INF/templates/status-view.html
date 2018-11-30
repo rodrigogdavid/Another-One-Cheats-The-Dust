@@ -9,71 +9,71 @@
 <h1>Let's check how are you really doing...</h1>
 
 <table th:object="${client}" th:action="@{'/status'}" method="get">
-    <tr>
-        <th><input type="text" th:field="*{firstName}"/>Firstname</th>
-        <th><input type="text" th:field="*{lastName}"/>Lastname</th>
-    </tr>
+
+        <h2><output type="text" th:field="*{firstName}" th:field="*{lastName}"/>Firstname, Lastname</h2>
+
     <tr>
         <th>Age:</th>
-        <td><input type="text" th:field="*{age}"/></td>
+        <td><output type="text" th:field="*{age}"/></td>
     </tr>
     <tr>
         <th>Height:</th>
-        <td><input type="text" th:field="*{height}"/></td>
+        <td><output type="text" th:field="*{height}"/></td>
     </tr>
     <tr>
         <th>Weight:</th>
-        <td><input type="text" th:field="*{weight}"/></td>
+        <td><output type="text" th:field="*{weight}"/></td>
     </tr>
     <tr>
-        <th>Heart beats:</th>
-        <td><input type="text" th:field="*{heartBeats}"/></td>
+        <th>Heartbeats:</th>
+        <td><output type="text" th:field="*{heartBeats}"/></td>
     </tr>
     <tr>
         <th>IMC:</th>
-        <td><input type="text" th:field="*{IMC}"/></td>
+        <td><output type="text" th:field="*{IMC}"/></td>
     </tr>
     <tr>
-        <th>Smoke?:</th>
-        <td><input type="text" th:field="*{smoking}"/></td>
+        <th>Smoke?</th>
+        <td><output type="text" th:field="*{smoking}"/></td>
     </tr>
     <tr>
-        <th>Drink?:</th>
-        <td><input type="text" th:field="*{drinking}"/></td>
+        <th>Drink?</th>
+        <td><output type="text" th:field="*{drinking}"/></td>
     </tr>
     <tr>
-        <th>Take drugs?:</th>
-        <td><input type="text" th:field="*{takeDrugs}"/></td>
+        <th>Take drugs?</th>
+        <td><output type="text" th:field="*{takeDrugs}"/></td>
     </tr>
     <tr>
-        <th>Has a risky job?:</th>
-        <td><input type="text" th:field="*{riskyJob}"/></td>
+        <th>Has a risky job?</th>
+        <td><output type="text" th:field="*{riskyJob}"/></td>
     </tr>
     <tr>
-        <th>Exercise? Practise sport(s)?:</th>
-        <td><input type="text" th:field="*{sports}"/></td>
+        <th>Exercise? Practise sport(s)?</th>
+        <td><output type="text" th:field="*{sports}"/></td>
     </tr>
     <tr>
-        <th>Is a Code Cadet or did a bootcamp?:</th>
-        <td><input type="text" th:field="*{bootcampCodeCadet}"/></td>
+        <th>Is a Code Cadet or did a bootcamp?</th>
+        <td><output type="text" th:field="*{bootcampCodeCadet}"/></td>
     </tr>
     <tr>
-        <th>How many meals takes in a day?:</th>
-        <td><input type="text" th:field="*{numberOfMeals}"/></td>
+        <th>How many meals per day?</th>
+        <td><output type="text" th:field="*{numberOfMeals}"/></td>
     </tr>
-   <tr>
-       <th>Is in a relationship?:</th>
-       <td><input type="text" th:field="*{relationship}"/></td>
-   </tr>
     <tr>
-        <th>Have kids?:</th>
-        <td><input type="text" th:field="*{parent}"/></td>
+        <th>Is in a relationship?</th>
+        <td><output type="text" th:field="*{relationship}"/></td>
+    </tr>
+    <tr>
+        <th>Have kids?</th>
+        <td><output type="text" th:field="*{parent}"/></td>
     </tr>
     <tr>
         <th>Score:</th>
-        <td><input type="text" th:field="*{score}"/></td>
+        <td><output type="text" th:field="*{score}"/></td>
     </tr>
 </table>
+
 
 </body>
 
