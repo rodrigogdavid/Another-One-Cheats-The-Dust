@@ -9,6 +9,7 @@ import javax.persistence.*;
 @Table(name = "habit")
 public class Habit {
 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Integer id;
 
@@ -125,7 +126,6 @@ public class Habit {
                 ", numberOfMeals=" + numberOfMeals +
                 ", relationship=" + relationship +
                 ", parent=" + parent +
-                ", client=" + client +
                 '}';
     }
 }

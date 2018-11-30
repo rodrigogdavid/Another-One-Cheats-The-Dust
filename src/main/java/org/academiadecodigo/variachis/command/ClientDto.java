@@ -8,6 +8,7 @@ import javax.validation.constraints.Size;
 public class ClientDto {
 
     private Integer id;
+    private Integer idHabit;
 
     @NotNull(message = "First name is mandatory")
     @NotBlank(message = "First name is mandatory")
@@ -36,6 +37,14 @@ public class ClientDto {
     private Integer numberOfMeals;
     private boolean relationship;
     private boolean parent;
+
+    public Integer getIdHabit() {
+        return idHabit;
+    }
+
+    public void setIdHabit(Integer idHabit) {
+        this.idHabit = idHabit;
+    }
 
     public boolean isSmoking() {
         return smoking;

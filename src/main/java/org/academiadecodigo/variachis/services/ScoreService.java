@@ -25,10 +25,12 @@ public class ScoreService {
 
 
     @Transactional
-    public Integer totalScore(Integer id){
+    public Integer totalScore(Integer id) {
         Integer total = 0;
 
-         Client client = clientService.get(id);
+        System.out.println("SCORE ID " + id);
+
+        Client client = clientService.get(id);
 
         total = clientService.clientScore(id) + habitService.habitScore(id);
 

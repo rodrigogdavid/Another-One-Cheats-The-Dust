@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font: 400 15px/1.8 "Lato", sans-serif;
+            color: #777;
+        }
+
+        .bgimg-1 {
+            position: relative;
+            opacity: 0.65;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+        .bgimg-1 {
+            background-image: url("https://www.thevintagenews.com/wp-content/uploads/2018/07/gettyimages-85053556-640x423.jpg");
+            min-height: 100%;
+        }
+
+        .caption {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+            color: #000;
+        }
+
+        .caption span.border {
+            background-color: orange;
+            color: #fff;
+            padding: 18px;
+            font-size: 25px;
+            letter-spacing: 10px;
+        }
+
+        h3 {
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            font: 20px "Lato", sans-serif;
+            color: #111;
+        }
+
+        #links {
+            align-content: center;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        /* Turn off parallax scrolling for tablets and phones */
+        @media only screen and (max-device-width: 1024px) {
+            .bgimg-1 {
+                background-attachment: scroll;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="bgimg-1">
+    <div class="caption">
+        <span class="border">ADVISE!</span>
+    </div>
+</div>
+
+<div style="color: #777;background-color:white;text-align:center;padding:50px 80px">
+    <h3 style="text-align:center; font-size: 30px">Caution State</h3>
+    <p style="font-size: 25px; color: orangered">You are not going well...</p>
+
+    <p>You should take it easy with that 'rock a'roll' lifestyle...</p>
+
+    <br>
+
+    <p><b>Top 5 Healthy Tips:</b></p>
+    <p>Cool off without a beer.</p>
+    <p>Eat lots of fruit and vegetables.</p>
+    <p>Feel good about yourself today</p>
+    <p>Berries for your belly!</p>
+    <p>Eat more times! And try not to eat fast food, or candies!</p>
+
+    <br>
+
+    <p>Please see this amazing fitness app we suggest!</p>
+
+
+    <div id="links">
+
+        <a href="https://www.microsoft.com/en-us/p/perfect-workout/9nblggh2w6qd?activetab=pivot:overviewtab" target="_blank">
+            <img src="https://store-images.s-microsoft.com/image/apps.54280.13510798884983623.06480db0-3805-4b0b-9729-e195d141266d.e9a2628a-31b8-484d-ac35-58c8f87b1f28?mode=scale&q=90&h=270&w=270&background=%230078D7" width="50" height="50"/>
+        </a>
+
+    </div>
+
+</div>
+
+
+<div class="bgimg-1">
+    <div class="caption">
+        <span class="border">START WORKING!</span>
+        <br><br><br>
+        <a type="button" class="btn btn-default btn-md" th:href="@{'/client/'}"> Go back </a>
+    </div>
+</div>
+
+</body>
+</html>

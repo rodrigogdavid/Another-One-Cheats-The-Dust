@@ -15,8 +15,8 @@ public class DTOtoClient {
     private ClientService clientService;
     private ScoreService scoreService;
     private HabitService habitService;
-    private Integer idClient = 4;
-    private Integer idHabit = 4;
+    //private Integer idClient = 4;
+    //private Integer idHabit = 4;
 
     @Autowired
     public void setHabitService(HabitService habitService) {
@@ -38,17 +38,23 @@ public class DTOtoClient {
         //Client client = (clientDto.getId() != null ? clientService.get(clientDto.getId()) : new Client());
 
         Client client = clientService.findByName(clientDto.getFirstName(), clientDto.getLastName());
-        if(client == null){
+
+        if (client == null) {
             client = new Client();
         }
         Habit habit = clientDto.getId() != null ? habitService.get(clientDto.getId()) : new Habit();
-        habitService.save(habit);
+
+
+        System.out.println("\n\t\t" + clientDto + "\n\n");
+
         client.setAge(clientDto.getAge());
         client.setFirstName(clientDto.getFirstName());
         client.setLastName(clientDto.getLastName());
-        client.setHearthBeats(clientDto.getHeartBeats());
+        client.setHeartBeats(clientDto.getHeartBeats());
         client.setHeight(clientDto.getHeight());
         client.setWeight(clientDto.getWeight());
+
+        System.out.println("\n\t\t" + client + "\n\n");
 
 
         habit.setBootcampCodeCadet(clientDto.isBootcampCodeCadet());
@@ -62,14 +68,22 @@ public class DTOtoClient {
         habit.setSports(clientDto.isSports());
 
         //client.setHabit(habit);
+        client = clientService.save(client);
+        client.setHabit(habit);
+        habit.setId(client.getId());
+        habit = habitService.save(habit);
+        System.out.println("*************************DTOtoClient habit = " + habit);
+
+        System.out.println("Dto Client " + client);
         scoreService.totalScore(client.getId());
 
 
         return client;
 
     }
+}
 
-    public Client convertCreate(ClientDto clientDto) {
+    /*public Client convertCreate(ClientDto clientDto) {
 
         Client client = new Client();
 
@@ -84,7 +98,7 @@ public class DTOtoClient {
         client.setAge(clientDto.getAge());
         client.setFirstName(clientDto.getFirstName());
         client.setLastName(clientDto.getLastName());
-        client.setHearthBeats(clientDto.getHeartBeats());
+        client.setHeartBeats(clientDto.getHeartBeats());
         client.setHeight(clientDto.getHeight());
         client.setWeight(clientDto.getWeight());
 
@@ -106,4 +120,4 @@ public class DTOtoClient {
         return client;
 
     }
-}
+}*/

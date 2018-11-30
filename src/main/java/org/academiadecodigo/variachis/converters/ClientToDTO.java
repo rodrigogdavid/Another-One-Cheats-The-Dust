@@ -34,6 +34,7 @@ public class ClientToDTO {
 
     public ClientDto convert(Client client, Habit habit) {
 
+
         ClientDto clientDto = new ClientDto();
         //Habit habit = clientService.getHabit(client.getId());
 
@@ -46,7 +47,7 @@ public class ClientToDTO {
         clientDto.setWeight(client.getWeight());
 
 
-
+        clientDto.setIdHabit(habit.getId());
         clientDto.setBootcampCodeCadet(habit.isBootcampCodeCadet());
         clientDto.setDrinking(habit.isDrinking());
         clientDto.setNumberOfMeals(habit.getNumberOfMeals());
@@ -57,6 +58,7 @@ public class ClientToDTO {
         clientDto.setTakeDrugs(habit.isTakeDrugs());
         clientDto.setSports(habit.isSports());
 
+        System.out.println("ClientDto" + client);
         clientDto.setScore(scoreService.totalScore(client.getId()));
 
         return clientDto;

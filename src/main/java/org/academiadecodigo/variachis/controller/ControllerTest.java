@@ -50,13 +50,13 @@ public class ControllerTest {
     }
 
     @RequestMapping(method = RequestMethod.GET, path = {"", "/"})
-    public String mainView(){
+    public String mainView() {
         return "main-view";
     }
 
 
     @RequestMapping(method = RequestMethod.GET, path = "/login")
-    public String loginView(Model model){
+    public String loginView(Model model) {
         ClientDto clientDto = new ClientDto();
 
         model.addAttribute("client", clientDto);
@@ -65,7 +65,7 @@ public class ControllerTest {
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/newClient")
-    public String formView(Model model){
+    public String formView(Model model) {
         ClientDto clientDto = new ClientDto();
 
         model.addAttribute("client", clientDto);
@@ -81,23 +81,52 @@ public class ControllerTest {
 
         model.addAttribute("client", clientToDTO.convert(client, habit));
 
-        return "client/show";
+        return "client/status-view";
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/loginDone")
-    public String loginView(@Valid @ModelAttribute("client") ClientDto clientDto, BindingResult bindingResult){
+    public String loginView(@Valid @ModelAttribute("client") ClientDto clientDto, Model model, BindingResult bindingResult) {
 
 
-        if(bindingResult.hasErrors()){
+        if (bindingResult.hasErrors()) {
+            return "client/loginForm";
+        }
+
+        Client client = clientService.findByName(clientDto.getFirstName(), clientDto.getLastName());
+
+        if (client == null) {
+            return "redirect:/client/loginForm";
+
+        }
+
+        clientDto = clientToDTO.convert(client, client.getHabit());
+
+        model.addAttribute("client", clientDto);
+
+        return "redirect:/client/" + clientDto.getId();
+
+    }
+
+    @RequestMapping(method = RequestMethod.POST, path = "/newClient")
+    public String newClient(@Valid @ModelAttribute("client") ClientDto clientDto, BindingResult bindingResult) {
+
+
+        if (bindingResult.hasErrors()) {
             return "client/loginForm";
         }
 
         Client client = dtOtoClient.convert(clientDto);
 
-        if(client == null){
+        System.out.println("DTO TO CLIENT " + client);
+
+        if (client == null) {
             return "client/loginForm";
 
         }
+
+        client = clientService.save(client);
+
+        System.out.println("SAVED CLIENT " + client);
 
         clientDto = clientToDTO.convert(client, client.getHabit());
 
@@ -105,34 +134,24 @@ public class ControllerTest {
 
     }
 
-    @RequestMapping(method = RequestMethod.POST, path = "/newClient")
-    public String newClient(@Valid @ModelAttribute("client")ClientDto clientDto, BindingResult bindingResult){
+    @RequestMapping(method = RequestMethod.GET, path = "/health/{id}")
+    public String healthView(@PathVariable Integer id, Model model) {
+        Client client = clientService.get(id);
+        Habit habit = habitService.get(id);
 
-
-        if(bindingResult.hasErrors()){
-            return "client/loginForm";
+        if(client.getScore() > 65){
+            return "client/critical-view";
         }
 
-        Client client = dtOtoClient.convert(clientDto);
-
-        if(client == null){
-            return "client/loginForm";
-
+        if(client.getScore() > 45 && client.getScore() <= 65){
+            return "client/advice-view";
         }
 
-        clientService.save(client);
 
-        clientDto = clientToDTO.convert(client,client.getHabit());
 
-        return "redirect:/client/" + clientDto.getId();
+        model.addAttribute("client", clientToDTO.convert(client, habit));
 
+        return "client/healthy-view";
     }
-
-
-
-
-
-
-
 
 }

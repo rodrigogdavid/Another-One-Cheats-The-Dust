@@ -21,65 +21,66 @@ public class HabitService {
     public void setHabitDao(HabitDao habitDao) {
         this.habitDao = habitDao;
     }
+
     @Autowired
     public void setClientDao(ClientDao clientDao) {
         this.clientDao = clientDao;
     }
 
     @Transactional
-    public Habit get(Integer id){
+    public Habit get(Integer id) {
         return habitDao.findById(id);
     }
 
     @Transactional
-    public Habit save(Habit habit){
+    public Habit save(Habit habit) {
 
         return habitDao.saveOrUpdate(habit);
     }
 
-
-    public Integer habitScore(Integer id){
+    @Transactional
+    public Integer habitScore(Integer id) {
         Integer score = 0;
 
-        Client client = clientDao.findById(id);
+        Habit habit = habitDao.findById(id);
 
-        Habit habit = client.getHabit();
+        System.out.println("Habit Service, habit = " + habit);
 
-        if(habit.isDrinking()){
-            score += 1;
+        if (habit.isDrinking()) {
+            score += 10;
         }
 
-        if(habit.isParent()){
-            score += 1;
+        if (habit.isParent()) {
+            score += 5;
         }
 
-        if(habit.isBootcampCodeCadet()){
+        if (habit.isBootcampCodeCadet()) {
+            score += 15;
+        }
+
+        if (habit.isRiskyJob()) {
             score += 3;
         }
 
-        if (habit.isRiskyJob()){
-            score += 1;
+        if (habit.isSmoking()) {
+            score += 8;
         }
 
-        if (habit.isSmoking()){
-            score += 1;
+        if (habit.isRelationship()) {
+            score += 5;
         }
 
-        if (habit.isRelationship()){
-            score += 1;
-        }
-
-        if(!habit.isSports()){
+        if (!habit.isSports()) {
             score += 1;
         }
 
 
-        if(habit.isTakeDrugs()){
-            score += 3;
+        if (habit.isTakeDrugs()) {
+            score += 15;
         }
 
-        if(habit.getNumberOfMeals() < 5){
-            score += 1;
+        if (habit.getNumberOfMeals() < 5) {
+            score += 5;
         }
 
         //habitDao.saveOrUpdate(habit);

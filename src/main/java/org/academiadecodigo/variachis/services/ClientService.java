@@ -21,60 +21,63 @@ public class ClientService {
         this.clientDao = clientDao;
     }
 
-    public Client get(Integer id){
+    public Client get(Integer id) {
         return clientDao.findById(id);
     }
 
-    public Habit getHabit(Integer id){
+    public Habit getHabit(Integer id) {
         Client client = clientDao.findById(id);
 
         return client.getHabit();
     }
 
     @Transactional
-    public Client save (Client client){
+    public Client save(Client client) {
 
         return clientDao.saveOrUpdate(client);
     }
 
     @Transactional
-    public void delete(Integer id){
+    public void delete(Integer id) {
 
         //Client client = clientDao.findById(id);
 
         clientDao.delete(id);
     }
 
-
-    public Integer clientScore(Integer id){
+    @Transactional
+    public Integer clientScore(Integer id) {
         Integer score = 0;
 
         Client client = clientDao.findById(id);
 
-        int imc = Math.round(client.getWeight()/(client.getHeight() * client.getHeight()));
+        System.out.println("\n\n\n" + client + "\n\n\n");
 
-        if( imc > 30){
-            score += 2;
+
+        int imc = Math.round(client.getWeight() / (client.getHeight() * client.getHeight()));
+
+        if (imc > 30) {
+            score += 7;
         }
 
-        if(imc < 10){
-            score += 1;
+        if (imc < 10) {
+            score += 7;
         }
 
-        if(client.getAge() > 65){
-            score += 2;
+        if (client.getAge() > 65) {
+            score += 15;
         }
 
-        if(client.getAge() > 50 && client.getAge() <= 65){
-            score += 1;
+        if (client.getAge() > 50 && client.getAge() <= 65) {
+            score += 8;
         }
 
-        if( client.getHeartBeats() > 100 && client.getHeartBeats() <= 120){
-            score += 1;
+        if (client.getHeartBeats() > 100 && client.getHeartBeats() <= 120) {
+            score += 5;
         }
 
-        if(client.getHeartBeats() > 120){
-            score += 2;
+        if (client.getHeartBeats() > 120) {
+            score += 8;
         }
 
         return score;
@@ -82,13 +85,13 @@ public class ClientService {
 
     }
 
-    public Client findByName(String firstName, String lastName){
+    public Client findByName(String firstName, String lastName) {
 
         List<Client> clients = clientDao.findAll();
 
         Client clientLogin = null;
 
-        for(Client client : clients){
+        for (Client client : clients) {
             if (client.getFirstName().equals(firstName) && client.getLastName().equals(lastName)) {
 
                 clientLogin = client;
@@ -96,8 +99,6 @@ public class ClientService {
         }
         return clientLogin;
     }
-
-
 
 
 }

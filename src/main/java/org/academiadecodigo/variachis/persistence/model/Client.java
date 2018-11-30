@@ -51,7 +51,7 @@ public class Client {
         this.weight = weight;
     }
 
-    public void setHearthBeats(Integer hearthBeats) {
+    public void setHeartBeats(Integer hearthBeats) {
         this.heartBeats = hearthBeats;
     }
 
@@ -101,7 +101,6 @@ public class Client {
     }
 
 
-
     @Override
     public String toString() {
         return "Client{" +
@@ -111,7 +110,7 @@ public class Client {
                 ", age=" + age +
                 ", height=" + height +
                 ", weight=" + weight +
-                ", hearthBeats=" + heartBeats +
+                ", heartBeats=" + heartBeats +
                 ", score=" + score +
                 ", habit=" + habit +
                 '}';

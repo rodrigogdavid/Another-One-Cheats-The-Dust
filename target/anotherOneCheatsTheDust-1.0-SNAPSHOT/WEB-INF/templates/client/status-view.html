@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Another One Cheats The Dust</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        #button {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Let's check how are you really doing...</h1>
+    <h1 th:text="${client.firstName}+ ' ' + ${client.lastName}">
+
+    </h1>
+    <table class="table" th:object="${client}">
+
+        <tr>
+            <th>Age:</th>
+            <td><p th:text="${client.age}" type="text" th:field="*{age}"/></td><th>
+        </tr>
+        <tr>
+            <th>Height:</th>
+            <td><p  th:text="${client.height}" type="text" th:field="*{height}"/></td>
+        </tr>
+        <tr>
+            <th>Weight:</th>
+            <td><p th:text="${client.weight}" type="text" th:field="*{weight}"/></td>
+        </tr>
+        <tr>
+            <th>Heartbeats:</th>
+            <td><p th:text="${client.heartBeats}" type="text" th:field="*{heartBeats}"/></td>
+        </tr>
+        <!--<tr>
+            <th>IMC:</th>
+            <td><output type="text" th:field="*{IMC}"/></td>
+        </tr>-->
+        <tr>
+            <th>Smoke?</th>
+            <td><p th:text="${client.smoking}" type="text" th:field="*{smoking}"/></td>
+        </tr>
+        <tr>
+            <th>Drink?</th>
+            <td><p th:text="${client.drinking}" type="text" th:field="*{drinking}"/></td>
+        </tr>
+        <tr>
+            <th>Take drugs?</th>
+            <td><p th:text="${client.takeDrugs}" type="text" th:field="*{takeDrugs}"/></td>
+        </tr>
+        <tr>
+            <th>Has a risky job?</th>
+            <td><p th:text="${client.riskyJob}" type="text" th:field="*{riskyJob}"/></td>
+        </tr>
+        <tr>
+            <th>Exercise? Practise sport(s)?</th>
+            <td><p th:text="${client.sports}" type="text" th:field="*{sports}"/></td>
+        </tr>
+        <tr>
+            <th>Is a Code Cadet or did a bootcamp?</th>
+            <td><p th:text="${client.bootcampCodeCadet}" type="text" th:field="*{bootcampCodeCadet}"/></td>
+        </tr>
+        <tr>
+            <th>How many meals per day?</th>
+            <td><p th:text="${client.numberOfMeals}" type="text" th:field="*{numberOfMeals}"/></td>
+        </tr>
+        <tr>
+            <th>Is in a relationship?</th>
+            <td><p th:text="${client.relationship}"  type="text" th:field="*{relationship}"/></td>
+        </tr>
+        <tr>
+            <th>Have kids?</th>
+            <td><p th:text="${client.parent}" type="text" th:field="*{parent}"/></td>
+        </tr>
+        <tr>
+            <th>Score:</th>
+            <td><p th:text="${client.score}"  type="text" th:field="*{score}"/></td>
+        </tr>
+    </table>
+</div>
+<div id="button">
+    <a th:href="@{'/client/health/'+ ${client.id}}" class="btn btn-default" type="submit" value="Submit"> Our suggestion for you</a>
+</div>
+</body>
+</html>
