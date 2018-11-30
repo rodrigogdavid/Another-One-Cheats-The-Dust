@@ -28,7 +28,7 @@ public class ScoreService {
     public Integer totalScore(Integer id){
         Integer total = 0;
 
-        Client client = clientService.get(id);
+         Client client = clientService.get(id);
 
         total = clientService.clientScore(id) + habitService.habitScore(id);
 

@@ -105,6 +105,29 @@ public class ControllerTest {
 
     }
 
+    @RequestMapping(method = RequestMethod.POST, path = "/newClient")
+    public String newClient(@Valid @ModelAttribute("client")ClientDto clientDto, BindingResult bindingResult){
+
+
+        if(bindingResult.hasErrors()){
+            return "client/loginForm";
+        }
+
+        Client client = dtOtoClient.convert(clientDto);
+
+        if(client == null){
+            return "client/loginForm";
+
+        }
+
+        clientService.save(client);
+
+        clientDto = clientToDTO.convert(client,client.getHabit());
+
+        return "redirect:/client/" + clientDto.getId();
+
+    }
+
 
 
 

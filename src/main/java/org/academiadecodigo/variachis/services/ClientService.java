@@ -51,7 +51,7 @@ public class ClientService {
 
         Client client = clientDao.findById(id);
 
-        int imc = (int) Math.round(client.getWeight()/(client.getHeight() * client.getHeight()));
+        int imc = Math.round(client.getWeight()/(client.getHeight() * client.getHeight()));
 
         if( imc > 30){
             score += 2;

@@ -43,7 +43,7 @@
 
 <div class="container">
     <h2>New Client</h2>
-    <form th:object="${client}" th:action="@{'/clientform'}" method="post" action="/WEB-INF/templates/main-view.html">
+    <form th:object="${client}" th:action="@{'/client/newClient'}" method="post" action="/WEB-INF/templates/main-view.html">
 
         <div class="form-group">
         <label for="firstName">First Name:</label>
@@ -75,7 +75,41 @@
             <input type="text" th:field="*{heartBeats}" class="form-control" id="heartBeats" placeholder="Enter number of heart beats" name="heartBeats"/>
         </div>
 
+        <div class="form-group">
+            <label for="sports">Do you play sports?</label>
+            <input type="checkbox" name="mycheckbox" th:checked="${client.sports}" class="form-control" id="sports" placeholder="check if play sports" />
+        </div>
 
+        <div class="form-group">
+            <label for="drinking">Do you drink?</label>
+            <input type="checkbox" name="drinking" th:checked="${client.drinking}" class="form-control" id="drinking" placeholder="check if you drink" />
+        </div>
+
+        <div class="form-group">
+            <label for="riskyJob">Do you drink?</label>
+            <input type="checkbox" name="riskyJob" th:checked="${client.riskyJob}" class="form-control" id="riskyJob" placeholder="check if you have a risky job" />
+        </div>
+
+        <div class="form-group">
+            <label for="takeDrugs">Do you drink?</label>
+            <input type="checkbox" name="takeDrugs" th:checked="${client.takeDrugs}" class="form-control" id="takeDrugs" placeholder="check if you take drugs" />
+        </div>
+
+        <div class="form-group">
+            <label for="relationship">Are you in a relationship?</label>
+            <input type="checkbox" name="relationship" th:checked="${client.relationship}" class="form-control" id="relationship" placeholder="check if you are in a relationship" />
+        </div>
+
+
+        <div class="form-group">
+            <label for="smoking">Do you smoke?</label>
+            <input type="checkbox" name="smoking" th:checked="${client.smoking}" class="form-control" id="smoking" placeholder="check if you smoke" />
+        </div>
+
+        <div class="form-group">
+            <label for="numberofmeals">Number of Meals:</label>
+            <input type="text" th:field="${client.numberOfMeals}" class="form-control" id="numberofmeals" placeholder="Enter the number of meals" name="numberofmeals"/>
+        </div>
 
         <button type="submit" class="btn btn-default" value="Submit">Submit</button>
     </form>
