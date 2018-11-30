@@ -22,6 +22,13 @@ public class Habit {
     private boolean relationship;
     private boolean parent;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = client.getId();
+    }
 
     @OneToOne
     private Client client;

@@ -44,6 +44,43 @@ public class ClientService {
     }
 
 
+    public Integer clientScore(Integer id){
+        Integer score = 0;
+
+        Client client = clientDao.findById(id);
+
+        int imc = (int) Math.round(client.getWeight()/(client.getHeight() * client.getHeight()));
+
+        if( imc > 30){
+            score += 2;
+        }
+
+        if(imc < 10){
+            score += 1;
+        }
+
+        if(client.getAge() > 65){
+            score += 2;
+        }
+
+        if(client.getAge() > 50 && client.getAge() <= 65){
+            score += 1;
+        }
+
+        if( client.getHeartBeats() > 100 && client.getHeartBeats() <= 120){
+            score += 1;
+        }
+
+        if(client.getHeartBeats() > 120){
+            score += 2;
+        }
+
+        return score;
+
+
+    }
+
+
 
 
 }

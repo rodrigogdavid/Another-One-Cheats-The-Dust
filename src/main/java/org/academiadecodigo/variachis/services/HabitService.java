@@ -27,9 +27,7 @@ public class HabitService {
     }
 
     public Habit get(Integer id){
-        Client client = clientDao.findById(id);
-
-        return client.getHabit();
+        return habitDao.findById(id);
     }
 
     @Transactional
@@ -38,9 +36,13 @@ public class HabitService {
         return habitDao.saveOrUpdate(habit);
     }
 
-    @Transactional
-    public Integer setScore(Habit habit){
+
+    public Integer habitScore(Integer id){
         Integer score = 0;
+
+        Client client = clientDao.findById(id);
+
+        Habit habit = client.getHabit();
 
         if(habit.isDrinking()){
             score += 1;
@@ -79,7 +81,7 @@ public class HabitService {
             score += 1;
         }
 
-        habitDao.saveOrUpdate(habit);
+        //habitDao.saveOrUpdate(habit);
         return score;
     }
 
