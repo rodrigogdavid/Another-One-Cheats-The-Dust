@@ -1,10 +1,10 @@
 Developed @ Academia de Código
 
 Created by Code Cadets:
-David Afonso
-João Mendes
-Rafael Oliveira
-Rodrigo David
+David Afonso,
+João Mendes,
+Rafael Oliveira,
+Rodrigo David,
 Sara Fernandes
 
 Project developed during the 24h Hackathon of Academia de Código's 18th bootcamp.
