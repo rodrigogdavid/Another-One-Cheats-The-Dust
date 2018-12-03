@@ -11,18 +11,18 @@ Project developed during the 24h Hackathon of Academia de Código's 18th bootcam
 
 Some concepts applied on the project:
 
-Java
-MySQL
-Hibernate
-Spring
-Spring MVC
-HTML
-CSS
-Inheritance
-Composition
-JPA
-Thymeleaf
-Maven
+Java,
+MySQL,
+Hibernate,
+Spring,
+Spring MVC,
+HTML,
+CSS,
+Inheritance,
+Composition,
+JPA,
+Thymeleaf,
+Maven,
 Tomcat
 
 Project: Another One Cheats The Dust
