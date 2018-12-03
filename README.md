@@ -34,3 +34,7 @@ The client have the option to register on our app. It will be asked some persona
 through our complex algorithm.
 
 The client will be asked to fill in a form containing some habits or stress inducing activities that are prone to decrease their lifespan.
+
+Based on the information gathered, our App calculates a score and contructs a health profile where you could find some tips on how to improve your life.
+
+In the current version of the application, there are 3 profiles available: Healthy, Advise and Critical.
