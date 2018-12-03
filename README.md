@@ -33,4 +33,4 @@ and make an App to promote a healthy life, since the beat of the song is based o
 The client have the option to register on our app. It will be asked some personal information in order to generate a score
 through our complex algorithm.
 
-The client will be asked to fill in a form containing some habits that are prone to 
+The client will be asked to fill in a form containing some habits or stress inducing activities that are prone to decrease their lifespan.
